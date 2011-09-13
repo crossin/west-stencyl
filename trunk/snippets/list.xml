@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <pack>
     <snippet category="13" class="scripts.Design_205_205" desc="Allows an Actor to fire a wave of bullets on a periodic basis. You can set the number of shots, the interval between shots, the shot angle, and the distance between each shot in a volley." description="Allows an Actor to fire a wave of bullets on a periodic basis. You can set the number of shots, the interval between shots, the shot angle, and the distance between each shot in a volley." design="true" drawOrder="0" id="205" name="Bullet Wave" oid="-1" scenespecific="false" shared="false" type="actor">
-        <actortype default="" desc="Select the actor type you want to act as bullets." dropdown="" fullname="Bullet" hidden="false" id="1" name="Bullet" order="1"/>
         <number default="0" desc="The number of seconds between each volley. Use a positive number." dropdown="" fullname="Interval" hidden="false" id="16" name="_Interval" order="10"/>
+        <actortype default="" desc="Select the actor type you want to act as bullets." dropdown="" fullname="Bullet" hidden="false" id="1" name="Bullet" order="1"/>
         <number default="0.0" desc="The number of bullets you want the actor to fire." dropdown="" fullname="Number of Bullets" hidden="false" id="4" name="NumberofBullets" order="2"/>
         <number default="0.0" desc="The angle of the shot." dropdown="North=90&#10;North East=45&#10;East=0&#10;South East=315&#10;South=270&#10;South West=225&#10;West=180&#10;North West=135" fullname="Shot Angle" hidden="false" id="6" name="ShotAngle" order="3"/>
         <number default="0.0" desc="The amount of space, and hence the angle to adjust the shot by, that you want between bullets." dropdown="" fullname="Bullet Spread" hidden="false" id="7" name="BulletSpread" order="4"/>
@@ -10,11 +10,17 @@
         <number default="0.0" desc="The speed of the shot. Stick to whole numbers. Anything above 60 is pretty fast." dropdown="" fullname="Shot Speed" hidden="false" id="10" name="ShotSpeed" order="6"/>
         <number default="0.0" desc="This is the angle to reset the Shot Angle to after each spread shot." dropdown="North=90&#10;North East=45&#10;East=0&#10;South East=315&#10;South=270&#10;South West=225&#10;West=180&#10;North West=135" fullname="Shot Angle Reset" hidden="false" id="12" name="ShotAngleReset" order="7"/>
         <number default="0.0" desc="The Y offset to shift the initial position of the shot by. Set to a negative number if the actor is firing upward (in a negative Y direction). Set to a positive number if the actor is firing downward (in a positive Y direction)." dropdown="" fullname="YOffset" hidden="false" id="14" name="YOffset" order="8"/>
-        <number default="0.0" desc="The initial angle of the shot and the reference point from which other bullets will be fired from based on the Shot Angle value." dropdown="" fullname="Initial Shot Angle" hidden="true" id="15" name="_InitialShotAngle" order="9"/>
         <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
+        <number default="0.0" desc="The initial angle of the shot and the reference point from which other bullets will be fired from based on the Shot Angle value." dropdown="" fullname="Initial Shot Angle" hidden="true" id="15" name="_InitialShotAngle" order="9"/>
         <blocks/>
     </snippet>
     <snippet category="4" class="scripts.Design_206_206_SetOffscreenTolerances" desc="" description="" design="true" drawOrder="0" id="206" name="Set Offscreen Tolerances" oid="-1" scenespecific="false" shared="false" type="scene">
+        <blocks/>
+    </snippet>
+    <snippet category="0" class="scripts.Design_141_141_CreatePlayerActor" desc="Spawns an actor when the scene is created at the specified X and Y coordinates." description="Spawns an actor when the scene is created at the specified X and Y coordinates." design="true" drawOrder="0" id="141" name="Create Player Actor" oid="-1" scenespecific="false" shared="false" type="scene">
+        <actortype default="" desc="The Player Actor type you want to be created when the Scene loads." dropdown="" fullname="PlayerActor" hidden="false" id="1" name="PlayerActor" order="0"/>
+        <number default="0" desc="The horizontal position on-screen where you want the Player Actor to spawn." dropdown="" fullname="Xpos" hidden="false" id="2" name="Xpos" order="1"/>
+        <number default="0" desc="The vertical position on-screen where you want the Player Actor to appear." dropdown="" fullname="Ypos" hidden="false" id="3" name="Ypos" order="2"/>
         <blocks/>
     </snippet>
     <snippet category="13" class="scripts.Design_64_64_DieAfterTime" desc="Make the actor die after a certain time and then sends a &quot;respawn&quot; message to another actor." description="Make the actor die after a certain time and then sends a &quot;respawn&quot; message to another actor." design="true" drawOrder="0" id="64" name="Die After Time Then Respawn" oid="-1" scenespecific="false" shared="false" type="actor">
@@ -22,12 +28,6 @@
         <boolean default="false" desc="The actor can optionally fade out before it dies." dropdown="" fullname="Fade Out?" hidden="false" id="2" name="fadeOut" order="1"/>
         <number default="0" desc="If fading out, specifies the duration of the fade in seconds." dropdown="" fullname="Fade Duration" hidden="false" id="3" name="fadeDuration" order="2"/>
         <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
-        <blocks/>
-    </snippet>
-    <snippet category="0" class="scripts.Design_141_141_CreatePlayerActor" desc="Spawns an actor when the scene is created at the specified X and Y coordinates." description="Spawns an actor when the scene is created at the specified X and Y coordinates." design="true" drawOrder="0" id="141" name="Create Player Actor" oid="-1" scenespecific="false" shared="false" type="scene">
-        <actortype default="" desc="The Player Actor type you want to be created when the Scene loads." dropdown="" fullname="PlayerActor" hidden="false" id="1" name="PlayerActor" order="0"/>
-        <number default="0" desc="The horizontal position on-screen where you want the Player Actor to spawn." dropdown="" fullname="Xpos" hidden="false" id="2" name="Xpos" order="1"/>
-        <number default="0" desc="The vertical position on-screen where you want the Player Actor to appear." dropdown="" fullname="Ypos" hidden="false" id="3" name="Ypos" order="2"/>
         <blocks/>
     </snippet>
     <snippet category="4" class="scripts.Design_129_129_DieWhenOffScreenforScrollingView" desc="This is a variant of &quot;Die When Off Screen&quot; that kills an actor when it has gone beyond certain boundaries. Note that although you can choose more than one scrolling direction at a time, including opposite ones, this won't do anything more than kill any actors as soon as they come into the player's view. Choose one direction at a time, depending on the direction you want your game to scroll." description="This is a variant of &quot;Die When Off Screen&quot; that kills an actor when it has gone beyond certain boundaries. Note that although you can choose more than one scrolling direction at a time, including opposite ones, this won't do anything more than kill any actors as soon as they come into the player's view. Choose one direction at a time, depending on the direction you want your game to scroll." design="true" drawOrder="0" id="129" name="Die When Off Screen for Scrolling View" oid="-1" scenespecific="false" shared="false" type="actor">
@@ -51,8 +51,8 @@
         <number default="0" desc="" dropdown="" fullname="startDelay" hidden="true" id="11" name="startDelay" order="0"/>
         <boolean default="false" desc="" dropdown="" fullname="Random Start Delay?" hidden="false" id="12" name="randomStart" order="0"/>
         <boolean default="false" desc="Default starting direction is to the right or down, depending on the Horizontal or Vertical selection.  Check this box to reverse the starting direction." dropdown="" fullname="Reverse Start Direction" hidden="false" id="14" name="reverseStart" order="0"/>
-        <number default="0.0" desc="Amount of time to delay between each cycle in seconds." dropdown="" fullname="Delay Between Cycles" hidden="false" id="15" name="betweenDelay" order="0"/>
         <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
+        <number default="0.0" desc="Amount of time to delay between each cycle in seconds." dropdown="" fullname="Delay Between Cycles" hidden="false" id="15" name="betweenDelay" order="0"/>
         <boolean default="false" desc="" dropdown="" fullname="waiting" hidden="true" id="17" name="waiting" order="0"/>
         <number default="0.0" desc="" dropdown="" fullname="step" hidden="true" id="16" name="step" order="0"/>
         <blocks/>
@@ -257,17 +257,6 @@
         <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
         <blocks/>
     </snippet>
-    <snippet category="4" class="scripts.Design_183_183_OneDirectionMotion" desc="Allows an actor to move constantly in a single direction. You can select which direction the actor can move from the actor's Behavior page." description="Allows an actor to move constantly in a single direction. You can select which direction the actor can move from the actor's Behavior page." design="true" drawOrder="0" id="183" name="Single Direction Motion" oid="-1" scenespecific="false" shared="false" type="actor">
-        <boolean default="false" desc="Check this if you want to allow the Actor to move upward on screen." dropdown="" fullname="Move Up" hidden="true" id="3" name="_MoveUp" order="1"/>
-        <boolean default="false" desc="Check this if you want to allow the Actor to move downward on screen." dropdown="" fullname="Move Down" hidden="true" id="4" name="_MoveDown" order="2"/>
-        <boolean default="false" desc="Check this if you want to allow the Actor to move to the left on screen. " dropdown="" fullname="Move Left" hidden="true" id="5" name="_MoveLeft" order="3"/>
-        <boolean default="false" desc="Check this if you want to allow the Actor to move to the right on screen. " dropdown="" fullname="Move Right" hidden="true" id="6" name="_MoveRight" order="4"/>
-        <number default="0" desc="The speed at which to push the Actor." dropdown="" fullname="Speed" hidden="false" id="7" name="_Speed" order="5"/>
-        <number default="1" desc="Select the direction you want the Actor to move in. Choices include up, down, left or right." dropdown="Up=1&#10;Down=2&#10;Right=3&#10;Left=4" fullname="Direction" hidden="false" id="8" name="_Direction" order="6"/>
-        <number default="0" desc="The maximum speed the Actor can achieve." dropdown="" fullname="Top Speed" hidden="false" id="9" name="_TopSpeed" order="7"/>
-        <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
-        <blocks/>
-    </snippet>
     <snippet category="6" class="scripts.Design_62_62_ScoreCalculator" desc="This Behavior increases a scoring attribute by a set amount when it receives a message from various actors. Requires two Game Attributes (one called Score, a number, and the other called GameStart, a Boolean) to work properly. See the included screenshot for how to set up the Game Attributes for this Behavior. To function, this Behavior also requires that enemies each have the Score Detector Behavior attached." description="This Behavior increases a scoring attribute by a set amount when it receives a message from various actors. Requires two Game Attributes (one called Score, a number, and the other called GameStart, a Boolean) to work properly. See the included screenshot for how to set up the Game Attributes for this Behavior. To function, this Behavior also requires that enemies each have the Score Detector Behavior attached." design="true" drawOrder="0" id="62" name="Space Shooter Score Calculator" oid="-1" scenespecific="false" shared="false" type="scene">
         <number default="0.0" desc="The current score. Used to store the last value the scoring attribute was set to." dropdown="" fullname="CurrentScore" hidden="true" id="1" name="CurrentScore" order="0"/>
         <number default="0" desc="The number of points this Behavior will add to the Score attribute when it hears a message from the Score Detector Behavior." dropdown="" fullname="PointsA" hidden="false" id="2" name="_PointsA" order="2"/>
@@ -281,6 +270,17 @@
         <number default="0" desc="The number of points this Behavior will add to the Score attribute when it hears a message from the Score Detector Behavior." dropdown="" fullname="PointsI" hidden="false" id="10" name="_PointsI" order="10"/>
         <number default="0" desc="The number of points this Behavior will add to the Score attribute when it hears a message from the Score Detector Behavior." dropdown="" fullname="PointsJ" hidden="false" id="11" name="_PointsJ" order="11"/>
         <number default="0" desc="The number of points this Behavior will add to the Score attribute when it hears a message from the Score Detector Behavior." dropdown="" fullname="PointsE" hidden="false" id="12" name="_PointsE" order="6"/>
+        <blocks/>
+    </snippet>
+    <snippet category="4" class="scripts.Design_183_183_OneDirectionMotion" desc="Allows an actor to move constantly in a single direction. You can select which direction the actor can move from the actor's Behavior page." description="Allows an actor to move constantly in a single direction. You can select which direction the actor can move from the actor's Behavior page." design="true" drawOrder="0" id="183" name="Single Direction Motion" oid="-1" scenespecific="false" shared="false" type="actor">
+        <boolean default="false" desc="Check this if you want to allow the Actor to move upward on screen." dropdown="" fullname="Move Up" hidden="true" id="3" name="_MoveUp" order="1"/>
+        <boolean default="false" desc="Check this if you want to allow the Actor to move downward on screen." dropdown="" fullname="Move Down" hidden="true" id="4" name="_MoveDown" order="2"/>
+        <boolean default="false" desc="Check this if you want to allow the Actor to move to the left on screen. " dropdown="" fullname="Move Left" hidden="true" id="5" name="_MoveLeft" order="3"/>
+        <boolean default="false" desc="Check this if you want to allow the Actor to move to the right on screen. " dropdown="" fullname="Move Right" hidden="true" id="6" name="_MoveRight" order="4"/>
+        <number default="0" desc="The speed at which to push the Actor." dropdown="" fullname="Speed" hidden="false" id="7" name="_Speed" order="5"/>
+        <number default="1" desc="Select the direction you want the Actor to move in. Choices include up, down, left or right." dropdown="Up=1&#10;Down=2&#10;Right=3&#10;Left=4" fullname="Direction" hidden="false" id="8" name="_Direction" order="6"/>
+        <number default="0" desc="The maximum speed the Actor can achieve." dropdown="" fullname="Top Speed" hidden="false" id="9" name="_TopSpeed" order="7"/>
+        <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
         <blocks/>
     </snippet>
     <snippet category="4" class="scripts.Design_180_180_4WayMovement" desc="Move up/down/left/right but maintain position on screen." description="Move up/down/left/right but maintain position on screen." design="true" drawOrder="0" id="180" name="Four Way Scrolling Movement" oid="-1" scenespecific="false" shared="false" type="actor">
@@ -298,8 +298,8 @@
         <number default="0.8" desc="How quickly it loses speed when the key's let go." dropdown="" fullname="Slowdown Rate" hidden="false" id="12" name="decel" order="9"/>
         <animation default="" desc="" dropdown="" fullname="Up Animation (Idle)" hidden="false" id="13" name="ianimUp" order="14"/>
         <animation default="" desc="" dropdown="" fullname="Down Animation (Idle)" hidden="false" id="14" name="ianimDown" order="16"/>
-        <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="22"/>
         <animation default="" desc="" dropdown="" fullname="Left Animation (Idle)" hidden="false" id="15" name="ianimLeft" order="18"/>
+        <actor default="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="22"/>
         <boolean default="true" desc="Check this if you want this actor to be controlled by the player." dropdown="" fullname="Player Controlled?" hidden="false" id="17" name="player" order="4"/>
         <animation default="" desc="" dropdown="" fullname="Right Animation (Idle)" hidden="false" id="16" name="ianimRight" order="20"/>
         <boolean default="false" desc="" dropdown="" fullname="pressedRight" hidden="true" id="19" name="pressedRight" order="3"/>
